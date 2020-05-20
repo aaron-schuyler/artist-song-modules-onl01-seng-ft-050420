@@ -5,19 +5,19 @@ class Artist
   attr_reader :songs
   extend Memorable
   extend Findable
-  @@all = []
+  @@artists = []
 
   def initialize
-    @@all << self
+    @@artists << self
     @songs = []
   end
 
   def self.find_by_name(name)
-    @@all.detect{|a| a.name == name}
+    @@artists.detect{|a| a.name == name}
   end
 
   def self.all
-    @@all
+    @@artists
   end
 =begin
   def self.reset_all
